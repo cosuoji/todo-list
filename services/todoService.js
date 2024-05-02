@@ -43,7 +43,7 @@ export const updateToDo = async (toDoToUpdate, updatedTask) =>{
     try{
         const toDoChecker = await toDos.findOne({_id: toDoToUpdate})
         //console.log(toDoChecker)
-        
+
         if(!toDoChecker){
             throw new ErrorWithStatus("todo not found", 400)
         }
@@ -67,4 +67,27 @@ export const updateToDo = async (toDoToUpdate, updatedTask) =>{
         throw new ErrorWithStatus(error.message, 500)
     }
 
+}
+
+export const deleteToDo = async(toDoToDelete) =>{
+    try{    
+        const toDoChecker = await toDos.find({_id: toDoToDelete})
+        if(toDoChecker.length < 1){
+            throw new ErrorWithStatus("todo not found", 400)
+        }
+
+        if(toDoChecker.userId !== userId){
+            throw new ErrorWithStatus("You don't have permission to edit this", 400)
+        }
+
+        await toDos.findOneAndDelete({_id: toDoToDelete})
+        return {
+            message: "Blog Deleted",
+            toDo: toDoChecker,
+        }
+
+    }
+    catch(error){
+        throw new ErrorWithStatus(error.message, 500)
+    }
 }

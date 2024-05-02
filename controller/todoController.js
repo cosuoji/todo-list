@@ -36,3 +36,14 @@ export const updateToDo = async(req, res)=>{
         res.status(500).json({message: error.message})
     }
 }
+
+export const deleteToDo = async(req,res) =>{
+    try{
+        const toDoToDelete = req.params.todoId;
+        const result = await toDoService.deleteToDo(toDoToDelete)
+        res.json(result)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+}

@@ -6,6 +6,6 @@ const todoRoute = Router();
 todoRoute.get("/", authMiddleware, todoController.getAllTodos)
 todoRoute.post('/', authMiddleware, todoController.addToDo)
 todoRoute.put('/:todoId', authMiddleware,todoController.updateToDo)
-// todoRoute.delete('/', todoController.deleteToDo)
+todoRoute.delete('/:todoId', todoController.deleteToDo)
 
 export default todoRoute
