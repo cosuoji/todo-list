@@ -18,6 +18,10 @@ const userSchema = mongoose.Schema({
     password:{
         type: String, 
         requires: true,
+    }, 
+    list:{
+    type:[String], 
+    default: [],
     }
 }, {
     timestamps: true

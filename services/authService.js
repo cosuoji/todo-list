@@ -55,9 +55,9 @@ export const register = async (first_name, last_name, email, password) =>{
 
     return {
         message: "User created successfully",
-    //   //  data: {
-    //         user: newUser
-    //     }
+        data: {
+            user: newUser
+        }
     }
 
 }

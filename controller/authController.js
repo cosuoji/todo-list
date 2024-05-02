@@ -31,7 +31,6 @@ export const register = async (req, res)=>{
     try {
     const {first_name, last_name,email, password} = req.body
     const result = await authService.register(first_name, last_name,email, password)
-    //console.log(result)
     res.json(result)
     }
     catch(err){

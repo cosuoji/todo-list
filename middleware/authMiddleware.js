@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-import { tokenToUse } from "../controller/authController"
+import { tokenToUse } from "../controller/authController.js"
 export let emailId, userId;
 
 export const authMiddleware = (req, res, next) =>{
@@ -8,7 +8,7 @@ export const authMiddleware = (req, res, next) =>{
 
 
     if(!authorization){
-        return res.status(401).json({message: "Not Authorized to create or edit blogs"})
+        return res.status(401).json({message: "Not Authorized to make todos"})
     }
 
     //verify the token 

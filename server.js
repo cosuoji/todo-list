@@ -1,13 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import authRoute from "./routes/authRoutes.js";
+import todoRoute from "./routes/todoRoutes.js";
 
 const app = express();
 const PORT = 9000
 const MONGODB_URI = "mongodb+srv://test_user:password123456@bookstore.gvhx48w.mongodb.net/?retryWrites=true&w=majority&appName=bookstore"
+app.use(express.json())
 
 app.use("/", authRoute)
-//app.use("/todos", todoRoute)
+app.use("/todos", todoRoute)
 
 
 //catch other routes
