@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 
 
 const toDoSchema = mongoose.Schema({
-    userId:{
+    toDo:{
      type: String, 
-    },
-    list:{
-    type:[String], 
-    default: [],
+     required: true,
+    }, 
+    userId:{
+        type: String
     }
 }, {timestamps: true})
 

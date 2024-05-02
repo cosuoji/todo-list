@@ -5,7 +5,7 @@ import { authMiddleware } from "../middleware/authMiddleware.js";
 const todoRoute = Router();
 todoRoute.get("/", authMiddleware, todoController.getAllTodos)
 todoRoute.post('/', authMiddleware, todoController.addToDo)
-// todoRoute.put('/', todoController.updateToDo)
+todoRoute.put('/:todoId', authMiddleware,todoController.updateToDo)
 // todoRoute.delete('/', todoController.deleteToDo)
 
 export default todoRoute

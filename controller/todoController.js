@@ -23,3 +23,16 @@ export const addToDo = async(req, res) =>{
     }
     
 }
+
+export const updateToDo = async(req, res)=>{
+    try {
+        const toDoToUpdate = req.params.todoId;
+        const {toDo} = req.body
+        const updatedTask = toDo
+        const result = await toDoService.updateToDo(toDoToUpdate, updatedTask)
+        res.json(result)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+}
