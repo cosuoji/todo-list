@@ -1,3 +1,4 @@
+import { boolean } from "joi";
 import mongoose from "mongoose";
 
 
@@ -8,6 +9,10 @@ const toDoSchema = mongoose.Schema({
     }, 
     userId:{
         type: String
+    },
+    completed:{
+        type: Boolean,
+        default: false
     }
 }, {timestamps: true})
 
