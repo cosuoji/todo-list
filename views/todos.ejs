@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") -%>
+    <div>
+        *<!--  -->*
+        <h1 class="text-center">
+            ToDo Page
+        </h1>
+        <p>List of ToDos</p>
+        <ul>
+            <% for (let i=0; i < listOfTodos.length ; i++) { %>
+                <li>
+                    <%= listOfTodos[i] %>
+                </li>
+                <% } %>
+        </ul>
+
+    </div>
+    <%- include("partials/footer.ejs") -%>

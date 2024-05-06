@@ -6,10 +6,20 @@ import toDos from "../database/schema/todoSchema.js";
 
 export const getAllTodos = async() =>{
   try{
-    const userToDsiplay = await User.findOne({_id: userId})
+    const userToDsiplay = await toDos.find({userId: userId})
+    
+    const listOfTodos = [];
+    //console.log(userToDsiplay)
+    
+    //loop through the ToDo's and push the to the array
+    for(let i = 0; i < userToDsiplay.length; i++){
+        listOfTodos.push(userToDsiplay[i].toDo)
+    }
    
+    
+
     return {
-        toDoList: userToDsiplay.list
+        toDoList: listOfTodos
     }
 
     }
@@ -24,6 +34,7 @@ export const addToDo = async(newItem) =>{
       let toDoUser = userToUpdate._id.toHexString()
       
       const newToDo = new toDos({toDo: newItem, userId: toDoUser})
+      console.log(newToDo)
       await newToDo.save()
 
       return {

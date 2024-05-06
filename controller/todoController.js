@@ -2,8 +2,10 @@ import * as  toDoService from "../services/todoService.js"
 
 export const getAllTodos = async(req, res) =>{
     try{
-        const toDoList = await toDoService.getAllTodos()
-        res.json({message: "Get all ToDo's", data: toDoList})
+        const listOfTodos = await toDoService.getAllTodos()
+        console.log(listOfTodos)
+        res.render("todos.ejs", {listOfTodos: listOfTodos.toDoList})
+        //res.json({message: "Get all ToDo's", data: toDoList})
     }
     catch(error){
         res.status(500).json({message: error.message})

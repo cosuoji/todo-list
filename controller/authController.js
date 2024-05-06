@@ -13,12 +13,16 @@ export const login = async (req, res, next)=>{
             req.header.authorization = "Bearer" + tokenToUse
         }
         
-        res.json({
-            message: "Login successful",
-            data: {
-            accessToken: token, 
-      },
-    });
+        
+        res.redirect("/todos")
+
+    //     res.json({
+    //         message: "Login successful",
+    //         data: {
+    //         accessToken: token, 
+    //   },
+    // })
+    ;
     }
     catch(err){
         res.status(err.status || 500);
