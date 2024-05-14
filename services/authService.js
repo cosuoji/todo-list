@@ -2,6 +2,7 @@ import User from "../database/schema/userSchema.js";
 import ErrorWithStatus from "../exceptions/errorStatus.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import blacklist from "../database/schema/blacklistSchema.js";
 
 export const login = async (email, password) =>{
     //check if email exists
@@ -62,3 +63,24 @@ export const register = async (first_name, last_name, email, password) =>{
 
 }
 
+export const logout = async(tokenToUse) =>{
+    try{
+    const checkIfBlackListed = await blacklist.findOne({token: tokenToUse});
+    if(checkIfBlackListed) return res.sendStatus(204);
+    const newBlacklist = new blacklist({
+        token: tokenToUse
+    });
+
+    await newBlacklist.save();
+
+    return {
+        message: "You have been logged out",
+    }
+    }
+
+    catch(err){
+        return {
+            "status": err
+        }
+    }
+}

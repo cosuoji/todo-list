@@ -23,7 +23,7 @@ authRoute.get("/register", (req, res)=>{
 
 authRoute.post("/login", generateMiddleware(loginSchema), authController.login)
 authRoute.post("/register", generateMiddleware(registerSchema), authController.register)
-
+authRoute.get("/logout", authController.logout)
 
 export default authRoute
 

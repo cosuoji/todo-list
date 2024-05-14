@@ -1,10 +1,20 @@
 import jwt from "jsonwebtoken"
 import { tokenToUse } from "../controller/authController.js"
+import blacklist from "../database/schema/blacklistSchema.js";
 export let emailId, userId;
+const JWT_SECRET="secret"
 
-export const authMiddleware = (req, res, next) =>{
+export const authMiddleware = async (req, res, next) =>{
     // set the retrieved token to authorization
     const authorization = tokenToUse;
+
+    const checkIfBlackListed = await blacklist.findOne({token: tokenToUse});
+
+    if(checkIfBlackListed){
+        return res
+            .status(401)
+            .json({message: "This session has expired. Please login"})
+    }
 
 
     if(!authorization){
@@ -13,8 +23,6 @@ export const authMiddleware = (req, res, next) =>{
 
     //verify the token 
     
-    let JWT_SECRET="secret"
-
     jwt.verify(authorization, JWT_SECRET, (err, decoded)=>{
         if(err){
             return res.status(401).json({message: "Unauthorized"})
