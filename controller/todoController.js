@@ -3,7 +3,6 @@ import * as  toDoService from "../services/todoService.js"
 export const getAllTodos = async(req, res) =>{
     try{
         const listOfTodos = await toDoService.getAllTodos()
-        console.log(listOfTodos)
         res.render("todos.ejs", {listOfTodos: listOfTodos.toDoList})
         //res.json({message: "Get all ToDo's", data: toDoList})
     }
@@ -15,10 +14,11 @@ export const getAllTodos = async(req, res) =>{
 
 export const addToDo = async(req, res) =>{
     try{
-     const {newItem} = req.body
-     const result = await toDoService.addToDo(newItem);
-     
-     res.json(result)
+    
+     const {todo} = req.body
+     const result = await toDoService.addToDo(todo);
+     res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList})
+      
     }
     catch(error){
         res.status(500).json({message: error.message})

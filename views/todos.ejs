@@ -4,6 +4,11 @@
         <h1 class="text-center">
             ToDo Page
         </h1>
+        <form action="/todos" method="POST">
+        <label for="todo" class="form-label">toDo</label>
+        <input type="text" class="form-control" id="todo" name="todo">
+        <button type="sumbit">Add ToDo</button>
+        </form>
         <p>List of ToDos</p>
         <ul>
             <% for (let i=0; i < listOfTodos.length ; i++) { %>

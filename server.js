@@ -4,6 +4,7 @@ import authRoute from "./routes/authRoutes.js";
 import todoRoute from "./routes/todoRoutes.js";
 import path from 'path';
 import { fileURLToPath } from 'url';
+import bodyParser from "body-parser";
 
 
 const app = express();

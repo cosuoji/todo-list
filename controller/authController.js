@@ -35,7 +35,7 @@ export const register = async (req, res)=>{
     try {
     const {first_name, last_name,email, password} = req.body
     const result = await authService.register(first_name, last_name,email, password)
-    res.json(result)
+    res.redirect("/todos")
     }
     catch(err){
         res.status(err.status || 500);

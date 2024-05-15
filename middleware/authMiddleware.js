@@ -18,7 +18,8 @@ export const authMiddleware = async (req, res, next) =>{
 
 
     if(!authorization){
-        return res.status(401).json({message: "Not Authorized to make or view todos"})
+        return res.status(401)
+            .render("index.ejs")//.json({message: "Not Authorized to make or view todos"})
     }
 
     //verify the token 

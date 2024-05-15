@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 
 
 const toDoSchema = mongoose.Schema({
-    toDo:{
+    todo:{
      type: String, 
-     required: true,
     }, 
     userId:{
         type: String
@@ -15,5 +14,5 @@ const toDoSchema = mongoose.Schema({
     }
 }, {timestamps: true})
 
-const toDos = mongoose.model("ToDos", toDoSchema)
+const toDos = mongoose.model("toDos", toDoSchema)
 export default toDos
