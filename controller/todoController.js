@@ -2,8 +2,8 @@ import * as  toDoService from "../services/todoService.js"
 
 export const getAllTodos = async(req, res) =>{
     try{
-        const listOfTodos = await toDoService.getAllTodos()
-        res.render("todos.ejs", {listOfTodos: listOfTodos.toDoList})
+        const result = await toDoService.getAllTodos()
+        res.render("todos.ejs", {listOfTodos: result.toDoList, arrayOfIds: result.toDoIdArray})
         //res.json({message: "Get all ToDo's", data: toDoList})
     }
     catch(error){
@@ -17,7 +17,7 @@ export const addToDo = async(req, res) =>{
     
      const {todo} = req.body
      const result = await toDoService.addToDo(todo);
-     res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList})
+     res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList, arrayOfIds: result.data.todos.toDoIdArray})
       
     }
     catch(error){
@@ -41,7 +41,7 @@ export const updateToDo = async(req, res)=>{
 
 export const deleteToDo = async(req,res) =>{
     try{
-        const toDoToDelete = req.params.todoId;
+        const toDoToDelete = req.body.todoId
         const result = await toDoService.deleteToDo(toDoToDelete)
         res.json(result)
     }

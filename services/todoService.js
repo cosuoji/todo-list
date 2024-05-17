@@ -8,15 +8,23 @@ export const getAllTodos = async() =>{
   try{
     const userToDsiplay = await toDos.find({userId: userId})
     const listOfTodos = [];
+    const listOfTodoIds =[]
     //console.log(userToDsiplay)
     
     //loop through the ToDo's and push the to the array
     for(let i = 0; i < userToDsiplay.length; i++){
         listOfTodos.push(userToDsiplay[i].todo)
     }  
+
+    //loop through the ToDo's and push ids the to the array
+    for(let i = 0; i < userToDsiplay.length; i++){
+        listOfTodoIds.push(userToDsiplay[i]._id.toHexString())
+    }  
     
+
     return {
-        toDoList: listOfTodos
+        toDoList: listOfTodos,
+        toDoIdArray: listOfTodoIds
     }
 
     }
@@ -32,11 +40,12 @@ export const addToDo = async(todo) =>{
       
       const newToDo = new toDos({todo: todo, userId: toDoUser})
       await newToDo.save()
+     
 
       return {
         message: "todo added",
         data:{
-            todos: await getAllTodos()
+            todos: await getAllTodos(),
         }
       }
       
@@ -83,14 +92,15 @@ export const deleteToDo = async(toDoToDelete) =>{
             throw new ErrorWithStatus("todo not found", 400)
         }
 
-        if(toDoChecker.userId !== userId){
+        if(toDoChecker[0].userId !== userId){
             throw new ErrorWithStatus("You don't have permission to edit this", 400)
         }
 
         await toDos.findOneAndDelete({_id: toDoToDelete})
+
         return {
             message: "Blog Deleted",
-            toDo: toDoChecker,
+            todos: await getAllTodos(),
         }
 
     }

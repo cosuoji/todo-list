@@ -10,16 +10,67 @@
         <button type="sumbit">Add ToDo</button>
         </form>
         <p>List of ToDos</p>
-        <ul>
-            <% for (let i=0; i < listOfTodos.length ; i++) { %>
-                <li>
-                    <%= listOfTodos[i] %>
-                </li>
-                <% } %>
-        </ul>
+        <div>
+            <ul>          
+              <% for (let i=0; i < listOfTodos.length ; i++) { %>
+                <li style="list-style: none;">
+                     <form>
+                        <input class="todocheck" type="checkbox" value="<%=arrayOfIds[i] %>"> 
+                        <p style="display: inline;" class="todo"><%= listOfTodos[i] %></p>
+                        <button class="editButton" type="submit"  >edit</button>
+                        <button class="deleteButton" type="submit" >delete</button>
+                    </form> 
+                <% } %>   
+                </li> 
+            </ul>
+
+        </div>
+
         <form action="/logout" method="GET">
             <button>Logout</button>
         </form>
         
     </div>
     <%- include("partials/footer.ejs") -%>
+<script>
+  
+    window.addEventListener("load", (event) => {
+        let checkBox = document.getElementsByClassName("todocheck");
+        let deleteButton = document.getElementsByClassName("deleteButton")
+        let todo =  document.getElementsByClassName("todo")
+        // let ids = []
+        // for(let i = 0; i < checkBox.length; i++){
+        //     ids.push(checkBox[i].value)       
+        // }
+
+        for(let i = 0; i < deleteButton.length; i++){
+            deleteButton[i].addEventListener("click", _ =>{
+                
+               fetch("/todos",{
+                    method: "DELETE",
+                    body: JSON.stringify({
+                       todoId: checkBox[i].value
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }    
+                })
+                  .then((response) => response.json())
+                    .then((json) => console.log(json));
+            })
+        }
+
+        for(let i = 0; i < checkBox.length; i++){
+           checkBox[i].addEventListener("click", _=>{
+              //todo[i].style.textDecoration = lineThrough
+               todo[i].classList.toggle("strike")
+           }) 
+        }
+    });
+</script>
+
+<style>
+ .strike {
+  text-decoration: line-through;
+}
+</style>
