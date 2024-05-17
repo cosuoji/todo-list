@@ -49,3 +49,14 @@ export const deleteToDo = async(req,res) =>{
         res.status(500).json({message: error.message})
     }
 }
+
+export const markCompleted = async(req, res) =>{
+    try{
+        const toDoToMarkCompleted = req.body.todoId
+        const result = await toDoService.markCompleted(toDoToMarkCompleted)
+        res.json(result)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+}

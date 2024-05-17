@@ -108,3 +108,30 @@ export const deleteToDo = async(toDoToDelete) =>{
         throw new ErrorWithStatus(error.message, 500)
     }
 }
+
+export const markCompleted = async(toDoToMarkCompleted) =>{
+    try{
+        let finalAnswer;
+        const toDoChecker = await toDos.find({_id: toDoToMarkCompleted})
+         if(toDoChecker.length < 1){
+            throw new ErrorWithStatus("todo not found", 400)
+        }
+
+        if(toDoChecker[0].userId !== userId){
+            throw new ErrorWithStatus("You don't have permission to edit this", 400)
+        }
+
+        if(toDoChecker[0].completed === false) finalAnswer = true 
+        if(toDoChecker[0].completed === true) finalAnswer = false
+        await toDos.findOneAndUpdate({_id:toDoToMarkCompleted}, {completed: finalAnswer})
+
+        return {
+            message: "Mark  Completed Changed",
+            todos: await getAllTodos()
+        }
+
+    }
+    catch(error){
+        throw new ErrorWithStatus(error.message, 500)
+    }
+}
