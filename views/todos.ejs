@@ -65,6 +65,17 @@
               //todo[i].style.textDecoration = lineThrough
                todo[i].classList.toggle("strike")
 
+               fetch("/todos", {
+                   method: "PATCH",
+                   body: JSON.stringify({
+                       todoId: checkBox[i].value
+                   }),
+                   headers: {
+                       "Content-type": "application/json; charset=UTF-8"
+                   }
+               })
+                   .then((response) => response.json())
+                   .then((json) => console.log(json));
 
 
            }) 

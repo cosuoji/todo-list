@@ -127,7 +127,8 @@ export const markCompleted = async(toDoToMarkCompleted) =>{
 
         return {
             message: "Mark  Completed Changed",
-            todos: await getAllTodos()
+            todos: await getAllTodos(),
+            completed: toDoChecker[0].completed
         }
 
     }

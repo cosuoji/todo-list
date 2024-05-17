@@ -54,6 +54,7 @@ export const markCompleted = async(req, res) =>{
     try{
         const toDoToMarkCompleted = req.body.todoId
         const result = await toDoService.markCompleted(toDoToMarkCompleted)
+        console.log(result)
         res.json(result)
     }
     catch(error){
