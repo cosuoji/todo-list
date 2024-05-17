@@ -9,8 +9,8 @@ const toDoSchema = mongoose.Schema({
         type: String
     },
     completed:{
-        type: Boolean,
-        default: false
+        type: String,
+        default: "false"
     }
 }, {timestamps: true})
 

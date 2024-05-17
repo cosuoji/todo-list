@@ -3,7 +3,7 @@ import * as  toDoService from "../services/todoService.js"
 export const getAllTodos = async(req, res) =>{
     try{
         const result = await toDoService.getAllTodos()
-        res.render("todos.ejs", {listOfTodos: result.toDoList, arrayOfIds: result.toDoIdArray})
+        res.render("todos.ejs", {listOfTodos: result.toDoList, arrayOfIds: result.toDoIdArray, todostate: result.toDoState})
         //res.json({message: "Get all ToDo's", data: toDoList})
     }
     catch(error){
@@ -17,7 +17,7 @@ export const addToDo = async(req, res) =>{
     
      const {todo} = req.body
      const result = await toDoService.addToDo(todo);
-     res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList, arrayOfIds: result.data.todos.toDoIdArray})
+     res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList, arrayOfIds: result.data.todos.toDoIdArray, todostate: result.data.todos.toDoState})
       
     }
     catch(error){
@@ -53,9 +53,12 @@ export const deleteToDo = async(req,res) =>{
 export const markCompleted = async(req, res) =>{
     try{
         const toDoToMarkCompleted = req.body.todoId
-        const result = await toDoService.markCompleted(toDoToMarkCompleted)
-        console.log(result)
-        res.json(result)
+        const completedToggle = req.body.completed;
+        console.log(completedToggle)
+        const result = await toDoService.markCompleted(toDoToMarkCompleted, completedToggle)
+        console.log(result.lastOne.toDoState)
+        res.render("todos.ejs", {listOfTodos: result.lastOne.toDoList, arrayOfIds: result.lastOne.toDoIdArray, todostate: result.lastOne.toDoState})
+        //res.json(result)
     }
     catch(error){
         res.status(500).json({message: error.message})

@@ -8,7 +8,8 @@ export const getAllTodos = async() =>{
   try{
     const userToDsiplay = await toDos.find({userId: userId})
     const listOfTodos = [];
-    const listOfTodoIds =[]
+    const listOfTodoIds =[];
+    const toDoStates = []
     //console.log(userToDsiplay)
     
     //loop through the ToDo's and push the to the array
@@ -21,10 +22,16 @@ export const getAllTodos = async() =>{
         listOfTodoIds.push(userToDsiplay[i]._id.toHexString())
     }  
     
+    //loop through the ToDo's states(completed) the to the array
+    for(let i = 0; i < userToDsiplay.length; i++){
+        toDoStates.push(userToDsiplay[i].completed)
+    }  
+    
 
     return {
         toDoList: listOfTodos,
-        toDoIdArray: listOfTodoIds
+        toDoIdArray: listOfTodoIds,
+        toDoState: toDoStates, 
     }
 
     }
@@ -102,18 +109,17 @@ export const deleteToDo = async(toDoToDelete) =>{
             message: "Blog Deleted",
             todos: await getAllTodos(),
         }
-
     }
     catch(error){
         throw new ErrorWithStatus(error.message, 500)
     }
 }
 
-export const markCompleted = async(toDoToMarkCompleted) =>{
+export const markCompleted = async(toDoToMarkCompleted, completedToggle) =>{
     try{
-        let finalAnswer;
         const toDoChecker = await toDos.find({_id: toDoToMarkCompleted})
-         if(toDoChecker.length < 1){
+    
+        if(toDoChecker.length < 1){
             throw new ErrorWithStatus("todo not found", 400)
         }
 
@@ -121,14 +127,14 @@ export const markCompleted = async(toDoToMarkCompleted) =>{
             throw new ErrorWithStatus("You don't have permission to edit this", 400)
         }
 
-        if(toDoChecker[0].completed === false) finalAnswer = true 
-        if(toDoChecker[0].completed === true) finalAnswer = false
-        await toDos.findOneAndUpdate({_id:toDoToMarkCompleted}, {completed: finalAnswer})
+
+        await toDos.findOneAndUpdate({_id:toDoToMarkCompleted}, {completed: completedToggle})
+
 
         return {
-            message: "Mark  Completed Changed",
-            todos: await getAllTodos(),
-            completed: toDoChecker[0].completed
+            message: "Marked",
+            completed: completedToggle,
+            lastOne: await getAllTodos()
         }
 
     }

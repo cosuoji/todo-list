@@ -15,8 +15,8 @@
               <% for (let i=0; i < listOfTodos.length ; i++) { %>
                 <li style="list-style: none;">
                      <form>
-                        <input class="todocheck" type="checkbox" value="<%=arrayOfIds[i] %>"> 
-                        <p style="display: inline;" class="todo"><%= listOfTodos[i] %></p>
+                        <input class="todocheck" data-completed="<%= todostate[i] %>" type="checkbox" value="<%=arrayOfIds[i] %>"> 
+                        <p style="display: inline;"  class="todo"><%= listOfTodos[i] %></p>
                         <button class="editButton" type="submit"  >edit</button>
                         <button class="deleteButton" type="submit" >delete</button>
                     </form> 
@@ -43,13 +43,21 @@
         //     ids.push(checkBox[i].value)       
         // }
 
+        for(let i = 0; i < checkBox.length;i++){
+            if(checkBox[i].getAttribute('data-completed') === "true"){
+               checkBox[i].checked = true;
+               todo[i].classList.add("strike")
+
+            }
+        }
+
         for(let i = 0; i < deleteButton.length; i++){
             deleteButton[i].addEventListener("click", _ =>{
                 
                fetch("/todos",{
                     method: "DELETE",
                     body: JSON.stringify({
-                       todoId: checkBox[i].value
+                       todoId: checkBox[i].value,
                     }),
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -63,12 +71,23 @@
         for(let i = 0; i < checkBox.length; i++){
            checkBox[i].addEventListener("click", _=>{
               //todo[i].style.textDecoration = lineThrough
-               todo[i].classList.toggle("strike")
+
+              if(checkBox[i].getAttribute("data-completed") === 'false'){
+                todo[i].classList.add("strike")
+                checkBox[i].checked = true
+                checkBox[i].setAttribute("data-completed", "true")
+              } else if (checkBox[i].getAttribute("data-completed") === 'true'){
+                todo[i].classList.remove("strike")
+                checkBox[i].setAttribute("data-completed", "false")
+              }
+
+               console.log(checkBox[i].dataset.completed)
 
                fetch("/todos", {
                    method: "PATCH",
                    body: JSON.stringify({
-                       todoId: checkBox[i].value
+                       todoId: checkBox[i].value,
+                       completed: checkBox[i].dataset.completed
                    }),
                    headers: {
                        "Content-type": "application/json; charset=UTF-8"
