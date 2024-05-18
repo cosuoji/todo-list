@@ -62,7 +62,7 @@ export const addToDo = async(todo) =>{
     }
 }
 
-export const updateToDo = async (toDoToUpdate, updatedTask) =>{
+export const updateToDo = async (toDoToUpdate, text) =>{
     try{
         const toDoChecker = await toDos.findOne({_id: toDoToUpdate})
         //console.log(toDoChecker)
@@ -75,12 +75,14 @@ export const updateToDo = async (toDoToUpdate, updatedTask) =>{
             throw new ErrorWithStatus("You don't have permission to edit this", 400)
         }
 
-        toDoChecker.toDo = updatedTask;
-        await toDos.findOneAndUpdate({_id:toDoToUpdate}, {toDo: updatedTask})
+        
+
+        await toDos.findOneAndUpdate({_id:toDoToUpdate}, {todo: text})
         return {
             message: "Changes Saved",
             data:{
-                body: toDoChecker.toDo
+                body: toDoChecker,
+                lastOne: await getAllTodos()
             }
         }
         

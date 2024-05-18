@@ -28,10 +28,9 @@ export const addToDo = async(req, res) =>{
 
 export const updateToDo = async(req, res)=>{
     try {
-        const toDoToUpdate = req.params.todoId;
-        const {toDo} = req.body
-        const updatedTask = toDo
-        const result = await toDoService.updateToDo(toDoToUpdate, updatedTask)
+        const toDoToUpdate = req.body.todoId;
+        const {text} = req.body
+        const result = await toDoService.updateToDo(toDoToUpdate, text)
         res.json(result)
     }
     catch(error){
@@ -54,9 +53,9 @@ export const markCompleted = async(req, res) =>{
     try{
         const toDoToMarkCompleted = req.body.todoId
         const completedToggle = req.body.completed;
-        console.log(completedToggle)
+        //console.log(completedToggle)
         const result = await toDoService.markCompleted(toDoToMarkCompleted, completedToggle)
-        console.log(result.lastOne.toDoState)
+        //console.log(result.lastOne.toDoState)
         res.render("todos.ejs", {listOfTodos: result.lastOne.toDoList, arrayOfIds: result.lastOne.toDoIdArray, todostate: result.lastOne.toDoState})
         //res.json(result)
     }

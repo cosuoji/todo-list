@@ -38,11 +38,58 @@
         let checkBox = document.getElementsByClassName("todocheck");
         let deleteButton = document.getElementsByClassName("deleteButton")
         let todo =  document.getElementsByClassName("todo")
+        let editButton = document.getElementsByClassName("editButton")
         // let ids = []
         // for(let i = 0; i < checkBox.length; i++){
         //     ids.push(checkBox[i].value)       
         // }
 
+        
+        for(let i = 0; i < editButton.length; i++){
+            editButton[i].addEventListener("click", e =>{
+                e.preventDefault()
+
+                let input = document.createElement("input")
+                let newButton = document.createElement("button")
+
+                newButton.id = "save"
+                newButton.innerHTML = "save"
+
+                input.placeholder = todo[i].innerHTML;
+                todo[i].innerHTML = ""
+                todo[i].append(input)
+                todo[i].append(newButton)
+                let clonedButton = editButton[i]
+                editButton[i].remove()
+                
+                let saveButton = document.getElementById("save")
+                saveButton.addEventListener("click", e =>{
+                    e.preventDefault()
+                    let newEditButton = document.createElement("button");
+                    newEditButton.classList.add("editButton")
+                    newEditButton.innerHTML = "edit"
+                    todo[i].innerHTML = input.value
+                    todo[i].append(newEditButton)
+
+            
+
+                fetch("/todos", {
+                        method: "PUT",
+                        body: JSON.stringify({
+                            todoId: checkBox[i].value,
+                            text: input.value
+                        }),
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                        .then((response) => response.json())
+                        .then((json) => console.log(json));                   
+                    
+                })
+            })
+        }
+        
         for(let i = 0; i < checkBox.length;i++){
             if(checkBox[i].getAttribute('data-completed') === "true"){
                checkBox[i].checked = true;
@@ -81,7 +128,7 @@
                 checkBox[i].setAttribute("data-completed", "false")
               }
 
-               console.log(checkBox[i].dataset.completed)
+               //console.log(checkBox[i].dataset.completed)
 
                fetch("/todos", {
                    method: "PATCH",
