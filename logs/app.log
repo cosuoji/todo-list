@@ -1,0 +1,26 @@
+{"level":"info","message":"home page"}
+{"level":"info","message":"home page"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"home page"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"contentLength":"940","level":"info","message":"HTTP Access Log","method":"GET","responseTime":168.24,"status":401,"timestamp":"Wed May 29 2024 10:28:52 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":3.848,"status":404,"timestamp":"Wed May 29 2024 10:28:52 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":6.741,"status":404,"timestamp":"Wed May 29 2024 10:28:52 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"809","level":"info","message":"HTTP Access Log","method":"GET","responseTime":3.913,"status":200,"timestamp":"Wed May 29 2024 10:29:07 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"56","level":"info","message":"HTTP Access Log","method":"POST","responseTime":395.265,"status":302,"timestamp":"Wed May 29 2024 10:29:26 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"9289","level":"info","message":"HTTP Access Log","method":"GET","responseTime":294.172,"status":200,"timestamp":"Wed May 29 2024 10:29:27 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.962,"status":404,"timestamp":"Wed May 29 2024 10:29:27 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":4.2,"status":404,"timestamp":"Wed May 29 2024 10:29:27 GMT+0100 (West Africa Standard Time)","url":"/style.css"}

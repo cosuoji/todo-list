@@ -2,6 +2,7 @@ import { Router } from "express";
 import { generateMiddleware } from "../middleware/generatedMiddleware.js";
 import * as authController from "../controller/authController.js"
 import { loginSchema, registerSchema } from "../validations/authValidations.js";
+import logger from "../logger/logger.js"
 
 
 const authRoute = Router();
@@ -9,6 +10,7 @@ const authRoute = Router();
 //Authenticate routes, middleware to check login and register Schema
 
 authRoute.get("/", (req, res)=>{
+    logger.info("home page")
     res.render("index.ejs")
 })
 
