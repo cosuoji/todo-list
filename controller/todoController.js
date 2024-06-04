@@ -1,8 +1,31 @@
 import * as  toDoService from "../services/todoService.js"
+import client from "../integrations/redis.js"
 
 export const getAllTodos = async(req, res) =>{
     try{
+
+        //check cache
+        const cacheKey = "/todos"
+
+        //get data from Cache
+        const data = await client.get(cacheKey)
+
+        if(data){
+            console.log("returning data from cache")
+            return res.json({
+                data: JSON.parse(data),
+                error: null
+            })
+        }
+
+
+        
         const result = await toDoService.getAllTodos()
+
+        //set cache
+        await client.setEx(cacheKey, 600, JSON.stringify(result))
+
+        console.log("returning data from database")
         res.render("todos.ejs", {listOfTodos: result.toDoList, arrayOfIds: result.toDoIdArray, todostate: result.toDoState})
         //res.json({message: "Get all ToDo's", data: toDoList})
     }
@@ -17,6 +40,7 @@ export const addToDo = async(req, res) =>{
     
      const {todo} = req.body
      const result = await toDoService.addToDo(todo);
+     await client.del("/todos")
      res.render("todos.ejs", {listOfTodos: result.data.todos.toDoList, arrayOfIds: result.data.todos.toDoIdArray, todostate: result.data.todos.toDoState})
       
     }

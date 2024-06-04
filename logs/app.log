@@ -55,3 +55,79 @@
 {"level":"info","message":"to do app is running on PORT"}
 {"level":"info","message":"to do app is running on PORT"}
 {"contentLength":"749","level":"info","message":"HTTP Access Log","method":"POST","responseTime":2227.908,"status":200,"timestamp":"Sat Jun 01 2024 18:46:53 GMT+0100 (West Africa Standard Time)","url":"/file/upload"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"contentLength":"809","level":"info","message":"HTTP Access Log","method":"GET","responseTime":17.365,"status":200,"timestamp":"Mon Jun 03 2024 12:43:04 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.408,"status":404,"timestamp":"Mon Jun 03 2024 12:43:06 GMT+0100 (West Africa Standard Time)","url":"/favicon.ico"}
+{"contentLength":"56","level":"info","message":"HTTP Access Log","method":"POST","responseTime":459.398,"status":302,"timestamp":"Mon Jun 03 2024 12:43:22 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"level":"info","message":{"toDoIdArray":["6648087975765fda31150a12","66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6c1127c2540ccbbd35b","664dc6d5127c2540ccbbd36c","664dc6dd127c2540ccbbd371"],"toDoList":["another test todo","its one of them","maybe not","This is crazy","a new todo","maybe not","what's good"],"toDoState":["true","true","true","true","false","false","false"]}}
+{"contentLength":"9289","level":"info","message":"HTTP Access Log","method":"GET","responseTime":395.863,"status":200,"timestamp":"Mon Jun 03 2024 12:43:22 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.327,"status":404,"timestamp":"Mon Jun 03 2024 12:43:22 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":3.72,"status":404,"timestamp":"Mon Jun 03 2024 12:43:22 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":{"toDoIdArray":["6648087975765fda31150a12","66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6c1127c2540ccbbd35b","664dc6d5127c2540ccbbd36c","664dc6dd127c2540ccbbd371"],"toDoList":["another test todo","its one of them","maybe not","This is crazy","a new todo","maybe not","what's good"],"toDoState":["true","true","true","true","false","false","false"]}}
+{"contentLength":"9289","level":"info","message":"HTTP Access Log","method":"GET","responseTime":334.129,"status":200,"timestamp":"Mon Jun 03 2024 12:43:43 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"DELETE","responseTime":null,"status":null,"timestamp":"Mon Jun 03 2024 12:43:43 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.292,"status":404,"timestamp":"Mon Jun 03 2024 12:43:43 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.038,"status":404,"timestamp":"Mon Jun 03 2024 12:43:43 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"28","level":"info","message":"HTTP Access Log","method":"DELETE","responseTime":163.952,"status":500,"timestamp":"Mon Jun 03 2024 12:43:47 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"level":"info","message":{"toDoIdArray":["66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6c1127c2540ccbbd35b","664dc6d5127c2540ccbbd36c","664dc6dd127c2540ccbbd371"],"toDoList":["its one of them","maybe not","This is crazy","a new todo","maybe not","what's good"],"toDoState":["true","true","true","false","false","false"]}}
+{"contentLength":"8785","level":"info","message":"HTTP Access Log","method":"GET","responseTime":368.961,"status":200,"timestamp":"Mon Jun 03 2024 12:43:47 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.874,"status":404,"timestamp":"Mon Jun 03 2024 12:43:47 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.212,"status":404,"timestamp":"Mon Jun 03 2024 12:43:47 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":{"toDoIdArray":["66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6c1127c2540ccbbd35b","664dc6d5127c2540ccbbd36c"],"toDoList":["its one of them","maybe not","This is crazy","a new todo","maybe not"],"toDoState":["true","true","true","false","false"]}}
+{"contentLength":"8282","level":"info","message":"HTTP Access Log","method":"GET","responseTime":318.922,"status":200,"timestamp":"Mon Jun 03 2024 12:59:55 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"DELETE","responseTime":null,"status":null,"timestamp":"Mon Jun 03 2024 12:59:55 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":0.997,"status":404,"timestamp":"Mon Jun 03 2024 12:59:55 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.107,"status":404,"timestamp":"Mon Jun 03 2024 12:59:55 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"8281","level":"info","message":"HTTP Access Log","method":"PATCH","responseTime":592.949,"status":200,"timestamp":"Mon Jun 03 2024 13:00:02 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"8282","level":"info","message":"HTTP Access Log","method":"PATCH","responseTime":597.771,"status":200,"timestamp":"Mon Jun 03 2024 13:00:07 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"contentLength":"940","level":"info","message":"HTTP Access Log","method":"GET","responseTime":184.824,"status":401,"timestamp":"Mon Jun 03 2024 18:56:42 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":5.049,"status":404,"timestamp":"Mon Jun 03 2024 18:56:42 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":8.74,"status":404,"timestamp":"Mon Jun 03 2024 18:56:42 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"809","level":"info","message":"HTTP Access Log","method":"GET","responseTime":8.624,"status":200,"timestamp":"Mon Jun 03 2024 18:56:44 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"56","level":"info","message":"HTTP Access Log","method":"POST","responseTime":514.457,"status":302,"timestamp":"Mon Jun 03 2024 18:57:01 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"level":"info","message":{"toDoIdArray":["66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6c1127c2540ccbbd35b","664dc6d5127c2540ccbbd36c"],"toDoList":["its one of them","maybe not","This is crazy","a new todo","maybe not"],"toDoState":["true","true","true","false","false"]}}
+{"contentLength":"8282","level":"info","message":"HTTP Access Log","method":"GET","responseTime":455.635,"status":200,"timestamp":"Mon Jun 03 2024 18:57:02 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":5.815,"status":404,"timestamp":"Mon Jun 03 2024 18:57:02 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":6.688,"status":404,"timestamp":"Mon Jun 03 2024 18:57:02 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":{"toDoIdArray":["66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6d5127c2540ccbbd36c"],"toDoList":["its one of them","maybe not","This is crazy","maybe not"],"toDoState":["true","true","true","false"]}}
+{"contentLength":"7784","level":"info","message":"HTTP Access Log","method":"GET","responseTime":367.655,"status":200,"timestamp":"Mon Jun 03 2024 18:57:05 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"DELETE","responseTime":null,"status":null,"timestamp":"Mon Jun 03 2024 18:57:05 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.604,"status":404,"timestamp":"Mon Jun 03 2024 18:57:05 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":4.735,"status":404,"timestamp":"Mon Jun 03 2024 18:57:05 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":{"toDoIdArray":["66480a9b75765fda31150a5e","66480abb75765fda31150a6c","66480b2775765fda31150a71","664dc6d5127c2540ccbbd36c"],"toDoList":["its one of them","maybe not","This is crazy","maybe not"],"toDoState":["true","true","true","false"]}}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"GET","responseTime":390.529,"status":304,"timestamp":"Mon Jun 03 2024 18:57:14 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.219,"status":404,"timestamp":"Mon Jun 03 2024 18:57:14 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":0.976,"status":404,"timestamp":"Mon Jun 03 2024 18:57:14 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"contentLength":"940","level":"info","message":"HTTP Access Log","method":"GET","responseTime":271.09,"status":401,"timestamp":"Mon Jun 03 2024 18:59:08 GMT+0100 (West Africa Standard Time)","url":"/todos?"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":3.124,"status":404,"timestamp":"Mon Jun 03 2024 18:59:08 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":5.585,"status":404,"timestamp":"Mon Jun 03 2024 18:59:08 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"809","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.199,"status":200,"timestamp":"Mon Jun 03 2024 18:59:10 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"56","level":"info","message":"HTTP Access Log","method":"POST","responseTime":272.947,"status":302,"timestamp":"Mon Jun 03 2024 18:59:21 GMT+0100 (West Africa Standard Time)","url":"/login"}
+{"contentLength":"7784","level":"info","message":"HTTP Access Log","method":"GET","responseTime":388.971,"status":200,"timestamp":"Mon Jun 03 2024 18:59:21 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":3.542,"status":404,"timestamp":"Mon Jun 03 2024 18:59:21 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":6.578,"status":404,"timestamp":"Mon Jun 03 2024 18:59:21 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"GET","responseTime":385.553,"status":304,"timestamp":"Mon Jun 03 2024 18:59:27 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.616,"status":404,"timestamp":"Mon Jun 03 2024 18:59:27 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.314,"status":404,"timestamp":"Mon Jun 03 2024 18:59:27 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"contentLength":"-","level":"info","message":"HTTP Access Log","method":"GET","responseTime":378.437,"status":304,"timestamp":"Mon Jun 03 2024 18:59:59 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.923,"status":404,"timestamp":"Mon Jun 03 2024 19:00:00 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.154,"status":404,"timestamp":"Mon Jun 03 2024 19:00:00 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":"to do app is running on PORT"}
+{"contentLength":"940","level":"info","message":"HTTP Access Log","method":"GET","responseTime":165.713,"status":401,"timestamp":"Mon Jun 03 2024 19:01:28 GMT+0100 (West Africa Standard Time)","url":"/todos"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":1.926,"status":404,"timestamp":"Mon Jun 03 2024 19:01:28 GMT+0100 (West Africa Standard Time)","url":"/bootstrap.css"}
+{"contentLength":"23","level":"info","message":"HTTP Access Log","method":"GET","responseTime":2.337,"status":404,"timestamp":"Mon Jun 03 2024 19:01:28 GMT+0100 (West Africa Standard Time)","url":"/style.css"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}
+{"level":"info","message":"to do app is running on PORT"}

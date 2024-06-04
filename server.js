@@ -10,6 +10,7 @@ import multer from 'multer'
 import v2 from "./integrations/cloudinary.js";
 import fs from "fs"
 import morgan from "morgan";
+import redis from "./integrations/redis.js";
 
 
 
@@ -22,7 +23,7 @@ const PORT = 9000
 const MONGODB_URI = "mongodb+srv://test_user:password123456@bookstore.gvhx48w.mongodb.net/?retryWrites=true&w=majority&appName=bookstore"
 app.use(express.json())
 app.use(express.urlencoded())
-app.use(httpLogger)
+//app.use(httpLogger)
 app.use(morgan('dev'))
 
 
@@ -84,3 +85,4 @@ mongoose.connect(MONGODB_URI)
             logger.info("to do app is running on PORT", PORT)
         })
     })
+redis.connect()

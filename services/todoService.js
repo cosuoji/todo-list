@@ -4,6 +4,7 @@ import User from "../database/schema/userSchema.js";
 import toDos from "../database/schema/todoSchema.js";
 
 
+
 export const getAllTodos = async() =>{
   try{
     const userToDsiplay = await toDos.find({userId: userId})
